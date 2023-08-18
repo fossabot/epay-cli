@@ -2,9 +2,10 @@ package utils
 
 import (
 	"fmt"
-	"github.com/samber/lo"
 	"sort"
 	"strings"
+
+	"github.com/samber/lo"
 )
 
 func CalculateEPaySign(mapData map[string]string, secret string) string {

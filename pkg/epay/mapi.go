@@ -7,7 +7,7 @@ import (
 	"net/http"
 	"strconv"
 
-	"epay-cli/pkg/utils"
+	"github.com/AH-dark/epay-cli/pkg/utils"
 )
 
 type MApiSubmitArgs struct {

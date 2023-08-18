@@ -1,7 +1,7 @@
 package epay
 
 import (
-	"epay-cli/pkg/utils"
+	"github.com/AH-dark/epay-cli/pkg/utils"
 )
 
 // GenerateParams 生成加签参数
