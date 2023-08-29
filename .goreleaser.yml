@@ -3,6 +3,7 @@ project_name: epay-cli
 before:
   hooks:
     - go mod tidy
+
 builds:
   - id: epay-cli
     main: .
@@ -20,17 +21,15 @@ builds:
     ldflags:
       - -s -w -X main.version={{ .Version }} -X main.commit={{ .Commit }} -X main.date={{ .Date }}
     goos:
-      - linux
-      - windows
-      - darwin
+      - "linux"
+      - "windows"
     goarch:
-      - amd64
-      - arm64
-    goarm:
-      - '5'
-      - '6'
-      - '7'
-      - '8'
+      - "amd64"
+      - "arm64"
+      - "arm"
+
+universal_binaries:
+  - id: epay-cli
 
 signs:
   - artifacts: checksum
