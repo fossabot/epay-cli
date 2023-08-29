@@ -1,22 +1,34 @@
 ## epay cli
 
+A command line tool for epay testing.
+
+### Build
+
+```bash
+make build
 ```
-NAME:
-   epay-cli - epay-cli is a command line tool for epay
 
-USAGE:
-   epay-cli [global options] command [command options] [arguments...]
+### Usage
 
-VERSION:
-   0.0.1
+Based on previous build, you can find the binary file in `bin/epay-cli`.
 
-COMMANDS:
-   help, h  Shows a list of commands or help for one command
-   test:
-     submit  get submit.php url and args
-     mapi    mapi submit
+We provide a simple command line tool for epay testing and maintenance.
 
-GLOBAL OPTIONS:
-   --help, -h     show help
-   --version, -v  print the version
+#### Test for API
+
+```bash
+./bin/epay-cli test submit # test submit api
+./bin/epay-cli test mapi # test mapi submit api
+```
+
+#### Migration
+
+```bash
+./bin/epay-cli migrate # generate sql schema
+```
+
+#### Help
+
+```bash
+./bin/epay-cli help
 ```
