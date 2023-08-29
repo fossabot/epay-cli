@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: write
+  packages: write
 
 jobs:
   release:
@@ -48,8 +49,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
           GPG_FINGERPRINT: ${{ steps.import_gpg.outputs.fingerprint }}
-          DOCKER_REGISTRY: ghcr.io
-          DOCKER_IMAGE_NAME: ${{ github.repository }}
+          DOCKER_REGISTRY: ghcr.io/ah-dark
+          DOCKER_IMAGE_NAME: epay-cli
 
       - name: Upload assets
         uses: actions/upload-artifact@v3
