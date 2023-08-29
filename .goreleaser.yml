@@ -5,7 +5,7 @@ before:
     - go mod tidy
 builds:
   - id: epay-cli
-    main: ./cmd/epay
+    main: .
     binary: epay-cli
     env:
       - CGO_ENABLED=0
@@ -17,6 +17,8 @@ builds:
         {{- if eq .Os "windows" }}
           {{- if eq .Arch "amd64" }}CC=x86_64-w64-mingw32-gcc{{- end }}
         {{- end }}
+    ldflags:
+      - -s -w -X main.version={{ .Version }} -X main.commit={{ .Commit }} -X main.date={{ .Date }}
     goos:
       - linux
       - windows
