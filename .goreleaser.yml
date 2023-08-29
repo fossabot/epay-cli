@@ -72,7 +72,8 @@ release:
 
 dockers:
   - image_templates:
-      - {{ .Env.DOCKER_REGISTRY }}/{{ .Env.DOCKER_IMAGE_NAME }}:{{ .Tag }}
+      - >-
+        {{ .Env.DOCKER_REGISTRY }}/{{ .Env.DOCKER_IMAGE_NAME }}:{{ .Tag }}
     goos: linux
     goarch: amd64
     dockerfile: Dockerfile
