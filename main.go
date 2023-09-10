@@ -7,7 +7,9 @@ import (
 
 	"github.com/urfave/cli/v2"
 
-	"github.com/AH-dark/epay-cli/actions"
+	"github.com/AH-dark/epay-cli/actions/implements/mapi"
+	"github.com/AH-dark/epay-cli/actions/implements/migrate"
+	"github.com/AH-dark/epay-cli/actions/implements/submit"
 )
 
 var (
@@ -30,13 +32,13 @@ func main() {
 			"date": date,
 		},
 		Commands: []*cli.Command{
-			actions.MigrateCommand(),
+			migrate.NewService().Command(),
 			{
 				Name:  "test",
 				Usage: "test epay",
 				Subcommands: []*cli.Command{
-					actions.SubmitCommand(),
-					actions.MapiCommand(),
+					submit.NewService().Command(),
+					mapi.NewService().Command(),
 				},
 			},
 		},
