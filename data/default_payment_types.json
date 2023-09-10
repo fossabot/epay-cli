@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "name": "alipay",
+    "device": 0,
+    "showname": "支付宝",
+    "status": 1
+  },
+  {
+    "id": 2,
+    "name": "wxpay",
+    "device": 0,
+    "showname": "微信支付",
+    "status": 1
+  },
+  {
+    "id": 3,
+    "name": "qqpay",
+    "device": 0,
+    "showname": "QQ钱包",
+    "status": 1
+  },
+  {
+    "id": 4,
+    "name": "bank",
+    "device": 0,
+    "showname": "网银支付",
+    "status": 0
+  }
+]
