@@ -52,9 +52,3 @@ jobs:
           GPG_FINGERPRINT: ${{ steps.import_gpg.outputs.fingerprint }}
           DOCKER_REGISTRY: ghcr.io/ah-dark
           DOCKER_IMAGE_NAME: epay-cli
-
-      - name: Upload assets
-        uses: actions/upload-artifact@v3
-        with:
-          name: migrator
-          path: dist/*
