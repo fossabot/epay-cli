@@ -11,22 +11,18 @@ builds:
     env:
       - CGO_ENABLED=0
       - >-
-        {{- if eq .Os "darwin" }}
           {{- if eq .Arch "amd64"}}CC=o64-clang{{- end }}
           {{- if eq .Arch "arm64"}}CC=aarch64-apple-darwin20.2-clang{{- end }}
-        {{- end }}
-        {{- if eq .Os "windows" }}
-          {{- if eq .Arch "amd64" }}CC=x86_64-w64-mingw32-gcc{{- end }}
-        {{- end }}
     ldflags:
       - -s -w -X main.version={{ .Version }} -X main.commit={{ .Commit }} -X main.date={{ .Date }}
     goos:
-      - "linux"
-      - "windows"
+      - "darwin"
     goarch:
       - "amd64"
       - "arm64"
-      - "arm"
+
+universal_binaries:
+  - id: epay-cli
 
 signs:
   - artifacts: checksum
@@ -42,10 +38,6 @@ archives:
       {{- else if eq .Arch "386" }}i386
       {{- else }}{{ .Arch }}{{ end }}
       {{- if .Arm }}v{{ .Arm }}{{ end }}
-    # use zip for windows archives
-    format_overrides:
-      - goos: windows
-        format: zip
     files:
       - src: data/*
         dst: data
