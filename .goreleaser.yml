@@ -23,10 +23,10 @@ builds:
     goos:
       - "linux"
       - "windows"
+      - "darwin"
     goarch:
       - "amd64"
       - "arm64"
-      - "arm"
 
 universal_binaries:
   - id: epay-cli
