@@ -28,6 +28,9 @@ builds:
       - "arm64"
       - "arm"
 
+universal_binaries:
+  - id: epay-cli
+
 signs:
   - artifacts: checksum
     args: ["--batch", "-u", "{{ .Env.GPG_FINGERPRINT }}", "--output", "${signature}", "--detach-sign", "${artifact}"]
